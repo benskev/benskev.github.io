@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BenSkev GitHub Repo</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <link href="css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link href="css/anim.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/benskev">View On GitHub</a></li>
+          <!--<li class="downloads"><a href="https://github.com/benskev/spra/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/benskev/spra/tarball/master">TAR</a></li>
+          --><li class="title">BenSkev GitHub Repo</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>BenSkev GitHub Repo</h1>
+          <p>Basically just a collection of random computer programs that don't do anything signficant..</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/benskev">benskev</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>
+<a id="say-waa" class="anchor" href="#say-waa" aria-hidden="true">
+    <span aria-hidden="true" class="octicon octicon-link"></span>
+</a>Say waa is this ish?</h3>
+        <p>So this is supposed to be a project for code that I push onto github, some crazy projects that i've created and a few
+        odd ends and bits &amp; bobs. Please feel free to pull any code you like, reuse, and of course, have fun, but please give 
+        me a heads up to go check out the code so that I can see how awesome you are :D</p>
+      </section>
+            <div id='projectlist' name='projectlist'>
+                <h3 class='anchor'>Some stuff i've done</h3><div id='loaderz' name='loaderz' class="windows8">
+                    <div class="wBall" id="wBall_1">
+                            <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_2">
+                            <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_3">
+                            <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_4">
+                            <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_5">
+                            <div class="wInnerBall"></div>
+                    </div>
+            </div>
+            </div>
+            
+        
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+  <script>
+      
+            $(document).ready(function(){
+                // init the github data for my repos
+                var url = "https://api.github.com/users/benskev/repos";
+                $.get(url,function(data){
+                    console.log("DATA",data);
+                    var str = "";
+                    for(i = 0; i < data.length;i++)
+                    {
+                        var name = data[i].name;
+                        var description = data[i].description;
+                        var url = data[i].html_url;
+                        var pd = data[i].pushed_at.replace("Z"," ").replace("T"," ");
+                        str += "<div id='project-"+i+"'><h2><a href='"+url+"'>"+name+"</a><small><i>"+pd+"</i></small></h2><p>"+description+"</p></div>";
+                        
+                    }
+                    $("#projectlist").hide();
+                    document.getElementById("projectlist").innerHTML += str;
+                    $("#projectlist").fadeIn("slow");
+                    $("#loaderz").hide();
+                    //$("#projectlist").text(data);
+                });
+            });    
+            </script>
+</html>
