@@ -52,9 +52,15 @@
 </a>Say waa to meh?</h3>
           <form action="https://formspree.io/ben@benskev.co.za"
                 method="POST">
+              <input type="hidden" name="_next" value="//benskev.github.io/thanks.html" />
+              <input type="hidden" name="_subject" value="New message from Github Contact!" />
+              <label for="name">Name Please:</label>
               <input type="text" name="name">
+              <label for="_replyto">Email Please:</label>
               <input type="email" name="_replyto">
-              <input type="submit" value="Send">
+             <label for="message">Message Please:</label>
+             <textarea name='message' rows='5' cols='10'></textarea>
+               <input type="submit" value="Send">
               
           </form>
       </section>
