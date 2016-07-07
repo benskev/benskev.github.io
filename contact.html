@@ -54,18 +54,20 @@
                 method="POST">
               <input type="hidden" name="_next" value="//benskev.github.io/thanks.html" />
               <input type="hidden" name="_subject" value="New message from Github Contact!" />
-              <div>
-                    <label for="name">Name Please:</label>
-                    <input type="text" name="name">
-              </div>
-              <div>
-                    <label for="_replyto">Email Please:</label>
-                    <input type="email" name="_replyto">
-              </div>
-              <div>
-                    <label for="message">Message Please:</label>
-                    <textarea name='message' rows='5' cols='10'></textarea>
-              </div>
+              <table>
+                  <tr>
+                      <td><label for="name">Name Please:</label></td>
+                      <td><input type="text" name="name"></td>
+              </tr>
+              <tr>
+                  <td><label for="_replyto">Email Please:</label></td>
+                  <td><input type="email" name="_replyto"></td>
+              </tr>
+              <tr>
+                  <td><label for="message">Message Please:</label></td>
+                  <td><textarea name='message' rows='5' cols='10'></textarea></td>
+              </tr>
+              </table>
               <input type="submit" value="Send">
               
           </form>
